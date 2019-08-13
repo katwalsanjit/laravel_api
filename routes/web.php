@@ -16,4 +16,10 @@ Route::get('/', function () {
 });
 
 
-Route::resource('api/items', 'ItemsController');
+//Route::resource('api/items', 'ItemsController');
+
+Route::get('api/items',         'ItemsController@index')->name('items');
+Route::get('api/items/{item}',  'ItemsController@show')->name('items_show');
+Route::post('api/items',        'ItemsController@store')->name('items_store');
+Route::put('api/items/{item}',  'ItemsController@update')->name('items_update');
+Route::put('api/items/{item}',  'ItemsController@destroy')->name('items_destroy');
